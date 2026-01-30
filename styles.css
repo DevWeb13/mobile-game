@@ -1,0 +1,235 @@
+:root {
+  color-scheme: dark;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #0b0f1a;
+  color: #f4f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1c2440, #0b0f1a 55%);
+}
+
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.app__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #93a0c8;
+  margin: 0 0 8px;
+}
+
+.token-panel {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 10px 24px rgba(7, 9, 18, 0.4);
+}
+
+.token-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c3cae5;
+}
+
+.token-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f6d86b;
+}
+
+.game {
+  background: rgba(8, 12, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stake h2 {
+  margin: 0 0 12px;
+}
+
+.stake__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.stake__button {
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.stake__button strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.stake__button span {
+  font-size: 0.85rem;
+  color: #b7bfdc;
+}
+
+.stake__button--active {
+  border-color: #f6d86b;
+  transform: translateY(-2px);
+  background: rgba(246, 216, 107, 0.1);
+}
+
+.arena {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.arena__track {
+  position: relative;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1a2036, #1b2847 45%, #1a2036 55%);
+  overflow: hidden;
+}
+
+.arena__target {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12%;
+  height: 100%;
+  transform: translateX(-50%);
+  background: rgba(246, 216, 107, 0.25);
+}
+
+.arena__indicator {
+  position: absolute;
+  top: -6px;
+  width: 16px;
+  height: 30px;
+  border-radius: 8px;
+  background: #56f1c3;
+  box-shadow: 0 0 12px rgba(86, 241, 195, 0.7);
+  left: 0;
+}
+
+.arena__labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #94a1c6;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background: #f6d86b;
+  color: #11141f;
+}
+
+.button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.result {
+  min-height: 56px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #cdd4ee;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.info__card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.info__card h3 {
+  margin-top: 0;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, #7c5cff, #56f1c3);
+}
+
+@media (max-width: 700px) {
+  .app__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+}
