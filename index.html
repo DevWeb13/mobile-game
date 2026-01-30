@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Token Clash Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">Token Clash</p>
+          <h1>Precision Timing Prototype</h1>
+        </div>
+        <div class="token-panel">
+          <span class="token-label">Tokens</span>
+          <span id="tokenBalance" class="token-value">0</span>
+        </div>
+      </header>
+
+      <section class="game">
+        <div class="stake">
+          <h2>Select Stake</h2>
+          <div class="stake__options" id="stakeOptions"></div>
+        </div>
+
+        <div class="arena">
+          <div class="arena__track">
+            <div id="target" class="arena__target"></div>
+            <div id="indicator" class="arena__indicator"></div>
+          </div>
+          <div class="arena__labels">
+            <span>Miss</span>
+            <span>Perfect</span>
+            <span>Miss</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="startButton" class="button button--primary">Start Round</button>
+          <button id="stopButton" class="button" disabled>Tap!</button>
+        </div>
+
+        <div id="result" class="result" aria-live="polite"></div>
+      </section>
+
+      <section class="info">
+        <div class="info__card">
+          <h3>How it works</h3>
+          <ul>
+            <li>Choose a stake tier.</li>
+            <li>Hit <strong>Start Round</strong> and wait for the bar to move.</li>
+            <li>Press <strong>Tap!</strong> or spacebar at the center for max rewards.</li>
+          </ul>
+        </div>
+        <div class="info__card">
+          <h3>League Snapshot</h3>
+          <p id="leagueInfo">Bronze League · Entry 0 tokens</p>
+          <div class="progress">
+            <div id="leagueProgress" class="progress__fill"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
